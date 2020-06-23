@@ -22,104 +22,104 @@ This template is create for to provide to as that:
 
 Firtly, I'm going to explain the ptoject structure. I build on classic project structere(generally). The structure is:
 
-|YOUR_PROJECT_NAME
-|
-||---->| apps
-|      |
-|      |----> CMakeLists.txt
-|      |----> main.cpp
-|
-||---->| cmake
-|      |
-|      |----> ClangFormat.cmake
-|      |----> util.cmake
-|      |----> VersionFromGit.cmake
-|      |---->     ...
-|
-||---->| external_libs
-|      |
-|      |----> googletest
-|      |---->     ...
-|      |----> CMakeLists.txt
-|
-||---->| include
-|      ||---->| YOUR_PROJECT_NAME
-|      |      ||---->| YOUR_LIBRARY_NAME
-|      |      |      |      |---->Your_header.h
-|      |      |      |---->     ...
-|      |      |
-|      |      ||---->     ...
-|
-||---->| resources
-|      |----> YOUR_PROJECT_NAME.ico
-|      |---->     ...
-|
-||---->| src
-|      ||---->| YOUR_LIBRARY_NAME
-|      |      |     |---->Your_header.cpp
-|      |      |     |---->     ...
-|      |      |     |---->CMakeLists.txt
-|      |      |
-|      |      |---->     ...
-|      |      |---->CMakeLists.txt
-|      |      |---->ver.h.in
-|
-||---->| tests
-|      ||---->| YOUR_TEST_NAME
-|      |      |     |---->YOUR_TEST_NAME.cpp
-|      |      |     |---->     ...
-|      |      |     |---->CMakeLists.txt
-|      |      |---->     ...
-|      |      |---->CMakeLists.txt
-||----> .clang-format
-||----> .clang-format-ignore
-||----> .gitignore
-||----> CMakeLists.txt
-||----> LICENCE.md
-||----> README.md
+        |YOUR_PROJECT_NAME
+        |
+        ||---->| apps
+        |      |
+        |      |----> CMakeLists.txt
+        |      |----> main.cpp
+        |
+        ||---->| cmake
+        |      |
+        |      |----> ClangFormat.cmake
+        |      |----> util.cmake
+        |      |----> VersionFromGit.cmake
+        |      |---->     ...
+        |
+        ||---->| external_libs
+        |      |
+        |      |----> googletest
+        |      |---->     ...
+        |      |----> CMakeLists.txt
+        |
+        ||---->| include
+        |      ||---->| YOUR_PROJECT_NAME
+        |      |      ||---->| YOUR_LIBRARY_NAME
+        |      |      |      |      |---->Your_header.h
+        |      |      |      |---->     ...
+        |      |      |
+        |      |      ||---->     ...
+        |
+        ||---->| resources
+        |      |----> YOUR_PROJECT_NAME.ico
+        |      |---->     ...
+        |
+        ||---->| src
+        |      ||---->| YOUR_LIBRARY_NAME
+        |      |      |     |---->Your_header.cpp
+        |      |      |     |---->     ...
+        |      |      |     |---->CMakeLists.txt
+        |      |      |
+        |      |      |---->     ...
+        |      |      |---->CMakeLists.txt
+        |      |      |---->ver.h.in
+        |
+        ||---->| tests
+        |      ||---->| YOUR_TEST_NAME
+        |      |      |     |---->YOUR_TEST_NAME.cpp
+        |      |      |     |---->     ...
+        |      |      |     |---->CMakeLists.txt
+        |      |      |---->     ...
+        |      |      |---->CMakeLists.txt
+        ||----> .clang-format
+        ||----> .clang-format-ignore
+        ||----> .gitignore
+        ||----> CMakeLists.txt
+        ||----> LICENCE.md
+        ||----> README.md
 
 I have some rules for this template usage. If in this table are there any folder have same name another folder or file , you must be make same whole of them. 
 
-# Usage steps
+## Usage steps
 
-    1.  * Change YOUR_PROJECT_NAME foler name. 
-        * This will your project name and you will generate package and exe file with this name. 
-        * if you change this, you must change the "include->YOUR_PROJECT_NAME" and the "resources->YOUR_PROJECT_NAME.ico".
+1.  * Change YOUR_PROJECT_NAME foler name. 
+    * This will your project name and you will generate package and exe file with this name. 
+    * if you change this, you must change the "include->YOUR_PROJECT_NAME" and the "resources->YOUR_PROJECT_NAME.ico".
 
-    2.  * if you want create new library, only copy and paste YOUR_LIBRARY_NAME folder in src and  include-> YOUR_PROJECT_NAME.
-        * And then change its name. 
-        * This will provide to you generate automaticly library this name.
-        * This library will link automaticly
-        * cpp file must be inside of src->YOUR_LIBRARY_NAME
-        * hpp or h file must be inside of include->YOUR_PROJECT_NAME->YOUR_LIBRARY_NAME
-        * Repeat this steps how many you want.
+2.  * if you want create new library, only copy and paste YOUR_LIBRARY_NAME folder in src and  include-> YOUR_PROJECT_NAME.
+    * And then change its name. 
+    * This will provide to you generate automaticly library this name.
+    * This library will link automaticly
+    * cpp file must be inside of src->YOUR_LIBRARY_NAME
+    * hpp or h file must be inside of include->YOUR_PROJECT_NAME->YOUR_LIBRARY_NAME
+    * Repeat this steps how many you want.
 
-    3.  * For test, again copy and paste YOUR_TEST_NAME file how many you want.
-        * Change the .cpp file name it have same name with folder. I mean, if your folder name is tester_1, the .cpp file name must be tester_1.cpp.
-        * Write your test code in YOUR_TEST_NAME.cpp file.
-        * Please chack out there is googletest in external library. If there is no google test folder clone that.
+3.  * For test, again copy and paste YOUR_TEST_NAME file how many you want.
+    * Change the .cpp file name it have same name with folder. I mean, if your folder name is tester_1, the .cpp file name must be tester_1.cpp.
+    * Write your test code in YOUR_TEST_NAME.cpp file.
+    * Please chack out there is googletest in external library. If there is no google test folder clone that.
 
-    4.  * For clangformate,firstly, you must build(or call cmake I use cmake tool with VS code)
-        * Go to the build file with cd ./build command
-        * Type ninja clangformat (for me. For you what you use. For exemple make clangformat)
-        * It is will.
-    
-    5.  * For packeging with cpack,firstly, you must build(or call cmake I use cmake tool with VS code)
-        * Go to the build file with cd ./build command
-        * Type ninja package (for me. For you what you use. For exemple make package)
-        * Output is in package folder with YOUR_PROJECT_NAME installer name and YOUR_PROJECT_NAME.ico icon
-    
-    6.  * If you want to add external libraries without vcpkg, clone it to external lib
-        * Change main CMakeLista.txt file what is necessary for this folder under #internal libs comment.
+4.  * For clangformate,firstly, you must build(or call cmake I use cmake tool with VS code)
+    * Go to the build file with cd ./build command
+    * Type ninja clangformat (for me. For you what you use. For exemple make clangformat)
+    * It is will.
 
-     7. * If you want to add external libraries with vcpkg, You must clone vcpkg and make ready to use. You can find this on vcpkg github page.
-        * Sometimes, vcpkg give to you which command must adding in your main CMakeLists. Sometimes, you also should check the vcpkg/ports/usage file. This commands is like that:
-            * #find_package(SDL2 CONFIG REQUIRED) -> Before your executable(apps) or library(src) file. I put comment(# Find packages go here.) for this .
-            * #target_link_libraries(HelloWorld PRIVATE SDL2::SDL2 SDL2::SDL2main) -> After your executable(apps) or library(src) file. I put comment(#vcpkg linking) for this .
-        * Maybe you need to set vcpkg root directroy in main CMakeLists.txt
+5.  * For packeging with cpack,firstly, you must build(or call cmake I use cmake tool with VS code)
+    * Go to the build file with cd ./build command
+    * Type ninja package (for me. For you what you use. For exemple make package)
+    * Output is in package folder with YOUR_PROJECT_NAME installer name and YOUR_PROJECT_NAME.ico icon
+
+6.  * If you want to add external libraries without vcpkg, clone it to external lib
+    * Change main CMakeLista.txt file what is necessary for this folder under #internal libs comment.
+
+7. * If you want to add external libraries with vcpkg, You must clone vcpkg and make ready to use. You can find this on vcpkg github page.
+    * Sometimes, vcpkg give to you which command must adding in your main CMakeLists. Sometimes, you also should check the vcpkg/ports/usage file. This commands is like that:
+    * #find_package(SDL2 CONFIG REQUIRED) -> Before your executable(apps) or library(src) file. I put comment(# Find packages go here.) for this .
+    * #target_link_libraries(HelloWorld PRIVATE SDL2::SDL2 SDL2::SDL2main) -> After your executable(apps) or library(src) file. I put comment(#vcpkg linking) for this .
+    * Maybe you need to set vcpkg root directroy in main CMakeLists.txt
 
 
- # Options
+ ## Options
 
  * USE_VCPKG (default OFF) activate vcpkg usage (You must set root dir)
  * PASS_VERSION (default ON) if this is on, git tag is pass through CMake to your source code
