@@ -88,8 +88,8 @@ I have some rules for this template usage. If in this table are there any folder
 
 2.  * if you want create new library, only copy and paste YOUR_LIBRARY_NAME folder in src and  include-> YOUR_PROJECT_NAME.
     * And then change its name. 
-    * This will provide to you generate automaticly library this name.
-    * This library will link automaticly
+    * This will provide to you generate automatically library this name.
+    * This library will link automatically
     * cpp file must be inside of src->YOUR_LIBRARY_NAME
     * hpp or h file must be inside of include->YOUR_PROJECT_NAME->YOUR_LIBRARY_NAME
     * Repeat this steps how many you want.
