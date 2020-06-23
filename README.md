@@ -97,16 +97,16 @@ I have some rules for this template usage. If in this table are there any folder
 3.  * For test, again copy and paste YOUR_TEST_NAME file how many you want.
     * Change the .cpp file name it have same name with folder. I mean, if your folder name is tester_1, the .cpp file name must be tester_1.cpp.
     * Write your test code in YOUR_TEST_NAME.cpp file.
-    * Please chack out there is googletest in external library. If there is no google test folder clone that.
+    * Please check out there is googletest in external library. If there is no google test folder clone that.
 
 4.  * For clangformate,firstly, you must build(or call cmake I use cmake tool with VS code)
     * Go to the build file with cd ./build command
-    * Type ninja clangformat (for me. For you what you use. For exemple make clangformat)
+    * Type ninja clangformat (for me. For you what you use. For example make clangformat)
     * It is will.
 
 5.  * For packeging with cpack,firstly, you must build(or call cmake I use cmake tool with VS code)
     * Go to the build file with cd ./build command
-    * Type ninja package (for me. For you what you use. For exemple make package)
+    * Type ninja package (for me. For you what you use. For example make package)
     * Output is in package folder with YOUR_PROJECT_NAME installer name and YOUR_PROJECT_NAME.ico icon
 
 6.  * If you want to add external libraries without vcpkg, clone it to external lib
