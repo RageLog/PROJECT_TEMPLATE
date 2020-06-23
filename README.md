@@ -20,7 +20,7 @@ This template is create for to provide to as that:
 
 ## How to use
 
-Firtly, I'm going to explain the ptoject structure. I build on classic project structere(generally). The structure is:
+Firstly, I'm going to explain the project structure. I build on classic project structere(generally). The structure is:
 
         |YOUR_PROJECT_NAME
         |
