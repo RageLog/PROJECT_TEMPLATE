@@ -1,6 +1,6 @@
 # PROJECT_TEMPLATE
 
-PROJECT_TEMPLATE is a C++ cmake project template. If you ask to me "Why is that .zip file", I say that "Because, it is contain YOUR_PROJECT_NAME project file git inited with first "Project created !" commit add "0.0.0.0" tag. When I try to upload "PROJECT_TEMPLATE" folder with underfolder. This project work with FOLDER NAME and It is important for me.". If you want to create project or library with little or nothing changes in CMake files, don't think twice about using this (Of course think this but I won't :D). I'm using clang 10, ninja and VS Code with cmake tool on Windows. I cannot try to another platform. I could try out to this with GCC 10.1.0, clang 10.0.0 MSVC 2019 tool but MSVC give error with shared library because unfortunately I'm not define SHARED_EXPORD header now. Other compiler is generate .a file instead of .lib in windows. I will fix that.
+PROJECT_TEMPLATE is a C++ cmake project template. If you ask to me "Why is that .zip file", I say that "Because, it is contain YOUR_PROJECT_NAME project file git inited with first "Project created !" commit add "0.0.0.0" tag. When I try to upload "PROJECT_TEMPLATE" folder with underfolder. This project work with FOLDER NAME and It is important for me.". If you want to create project or library with little or nothing changes in CMake files, don't think twice about using this (Of course think this but I won't :D). I'm using clang 10, ninja and VS Code with cmake tool on Windows. I cannot try to another platform. Non-MSVC compilers compiler is generate .a file instead of .lib in windows. I will fix that. If you use MSVC(except to clang-cl) and shared library option , compiler have some error with googletest(Maybe with another libraries, I didn't tested). But with other compliers(clang,gcc), I didn't encountered like this problem.
 
 This template is create for to provide to as that:
 (at least my goal is that :D)
@@ -98,6 +98,7 @@ I have some rules for this template usage. If in this table are there any folder
     * Change the .cpp file name it have same name with folder. I mean, if your folder name is tester_1, the .cpp file name must be tester_1.cpp.
     * Write your test code in YOUR_TEST_NAME.cpp file.
     * Please check out there is googletest in external library. If there is no google test folder clone that.
+    * For now, Don't use with native MSVC(except to clang-cl) and shared linking
 
 4.  * For clangformate,firstly, you must build(or call cmake I use cmake tool with VS code)
     * Go to the build file with cd ./build command
